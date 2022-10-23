@@ -80,6 +80,7 @@ public class noteDetail extends AppCompatActivity {
         note.setTimestamp(Timestamp.now());
 
         saveNotetofirebase(note);
+        finish();
     }
 
     void saveNotetofirebase(Note note){
@@ -103,6 +104,7 @@ public class noteDetail extends AppCompatActivity {
 
     }
     void deletenotefromfirebase(){
+
         DocumentReference documentReference;
             documentReference=Utility.getcollectionReferencefornotes().document(docid);
 
@@ -117,5 +119,6 @@ public class noteDetail extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
 }
